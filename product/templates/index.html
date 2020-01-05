@@ -4,6 +4,7 @@
         <title>{{page_title}}</title>
     </head>
     <body>
+        <a href="/product/create">Create a new Product</a>
         {% for product in products %}
             <a href="/product/detail/{{product.id}}">
                 <h1>{{product.name}}</h1>

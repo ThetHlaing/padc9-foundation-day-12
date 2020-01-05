@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{page_title}}</title>
+    <style>
+        #label_one {
+            font-weight: bold;
+        }
+
+        .italicClass {
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        .blueText {
+            color: blue;
+        }
+
+        h1 {
+            background-color: #c94b4b;
+            color: #fff;
+            padding: 20px;
+            transition: color .5s ease;
+            border-radius: 5px;
+        }
+
+        /* h1,h2{
+                text-align: center;
+                display: inline-block;
+                width:48%;
+            } */
+
+        h1:hover {
+            color: #eaeaea;
+        }
+
+        form {
+            padding: 20px;
+            border: 1px solid #ac9e9e;
+            box-shadow: -5px 5px 5px #bdbdbd;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #426ada;
+            border: none;
+            padding: 10px 15px;
+            color: #fff;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        button:hover{
+            box-shadow: -3px 3px 3px #a1a1a1;
+            transform: translate(1px,-1px);
+        }
+
+        label {
+            min-width: 200px;
+            display: inline-block;
+            margin: 10px 0px;
+        }
+
+        input {
+            border-radius: 5px;
+            padding: 5px 8px;
+        }
+
+        /* input[type="password"]{
+            border:1px solid red;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1>Create a new awesome Product</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">
+            Name :
+        </label>
+        <input id="name" type="text" name="name" />
+        <br />
+        <label for="description">Description : </label>
+        <input id="description" type="text" name="description" />
+        <br />
+        <label for="category">Category : </label>
+        <input id="category" type="email" name="category" />
+        <br />
+        <button>Save Product</button>
+    </form>
+</body>
+
+</html>
