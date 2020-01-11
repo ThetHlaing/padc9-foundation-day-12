@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>{{page_title}}</title>
-    </head>
-    <body>
-        <a href="/product/create">Create a new Product</a>
+
+<head>
+    <title>{{page_title}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'external.css' %}">
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+    </nav>
+    <div class='container-fluid'>
+        <div class="row">
+                <div class="col-sm-6 col-12">
+                    This is a div
+                </div>
+
+        </div>
+        <a href="/product/create" class='my-own-link'>Create a new Product</a>
         {% for product in products %}
-            <a href="/product/detail/{{product.id}}">
-                <h1>{{product.name}}</h1>
-                <p>{{product.description}}</p>
-            </a>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                <a href="/product/detail/{{product.id}}" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
         {% endfor %}
-    </body>
+
+    </div>
+</body>
+
 </html>
