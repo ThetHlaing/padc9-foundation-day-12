@@ -18,25 +18,68 @@
         </ol>
     </nav>
     <div class='container-fluid'>
-        <div class="row">
-                <div class="col-sm-6 col-12">
-                    This is a div
+        <div class="">
+            <button id='toggle'>Toogle DIVS</button><br /><br />
+            <div id="div1" style="background-color: blue; width:100px; height:100px;">
+                This is to be shown
+            </div>
+            <div id="div2" style="background-color: green; color:#fff; width:100px; height:100px;">
+                This is to be hide
+            </div>
+
+            <input type="text"/>
+        </div>
+        <!-- 
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <a href="/product/create" class='btn btn-primary'>Create a new Product</a>
+                </div>
+                <div class="col-10">
+                    <div class="row">
+                        {% for product in products %}
+                        <div class='col-3'>
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{product.name}}</h5>
+                                    <p class="card-text">{{product.description}}</p>
+                                    <a href="/product/detail/{{product.id}}" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
 
-        </div>
-        <a href="/product/create" class='my-own-link'>Create a new Product</a>
-        {% for product in products %}
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{product.name}}</h5>
-                <p class="card-text">{{product.description}}</p>
-                <a href="/product/detail/{{product.id}}" class="btn btn-primary">Go somewhere</a>
             </div>
-        </div>
+        </div> -->
 
-        {% endfor %}
+
+
 
     </div>
+
+    <script>
+        // const button = document.getElementById('toggle');
+
+        const button = document.querySelector('#toggle');
+        const div2 = document.querySelector('#div2');
+        const div1 = document.querySelector('#div1');
+
+
+        button.addEventListener('click', function () {
+            
+            if(div2.style.display == 'none'){
+                div2.style.display = '';
+                div1.style.display = 'none';
+            }
+            else{
+                div2.style.display = 'none';
+                div1.style.display = '';
+            }
+            
+        });
+    </script>
 </body>
 
 </html>

@@ -7,10 +7,13 @@
    {% load static %}
 
    <link rel="stylesheet" type="text/css" href="{% static 'external.css' %}">
+   <style>
+   
+   </style>
 </head>
 
 <body>
-    <h1>Create a new awesome Product</h1>
+    <h1 style="font-size: 5em;">Create a new awesome Product</h1>
     <form method="POST">
         {% csrf_token %}
         <label for="name">
@@ -25,6 +28,7 @@
         <input id="category" type="email" name="category" />
         <br />
         <button>Save Product</button>
+        <button type="reset">Clear</button>
     </form>
 </body>
 
